@@ -17,3 +17,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: dmSerif
+      fonts:
+        - asset: assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf
+
+  assets:
+    - assets/images/
+    - assets/icons/
+   
+
