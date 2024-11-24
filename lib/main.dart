@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bookia_store/core/constants/app_fonts.dart';
+import 'package:bookia_store/features/intro/splash/splash.dart';
+import 'package:bookia_store/features/intro/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,15 +15,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: AppFonts.dmSerif,
-      ),
-      home: Scaffold(
-        body: Center(
-          child: Text('sdfdsfsfsd Worlsdfd!'),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: AppFonts.dmSerif,
         ),
-      ),
-    );
+        home: Welcome());
   }
 }

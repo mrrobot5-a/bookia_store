@@ -2,6 +2,7 @@ class AppAssets {
   static const String backgroundPng = "assets/images/background.png";
   static const String blackHeartPng = "assets/images/blackHeart.png";
   static const String logoPng = "assets/images/logo.png";
+  static const String logoSvg = "assets/icons/logo.svg";
 
   // Other assets can be added here
   static const String appleSvg = "assets/icons/apple.svg";
