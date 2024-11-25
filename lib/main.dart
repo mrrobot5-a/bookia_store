@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bookia_store/core/constants/app_fonts.dart';
-import 'package:bookia_store/features/intro/splash/splash.dart';
 import 'package:bookia_store/features/intro/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 
