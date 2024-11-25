@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bookia_store/core/constants/app_assets.dart';
+import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
+import 'package:bookia_store/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -35,7 +37,28 @@ class _SplashScreenState extends State<Welcome> {
                 Gap(20),
                 Text(
                   "Order Your Book Now!",
-                  style: getBodyTextStyle(),
+                  style: getFont20TextStyle(),
+                ),
+                Column(
+                  children: [
+                    CustomButton(
+                      color: AppColors.primaryColor,
+                      text: "Login",
+                      textColor: AppColors.whiteColor,
+                      width: 331,
+                      height: 56,
+                      onpressed: () {},
+                    ),
+                    Gap(20),
+                    CustomButton(
+                      color: AppColors.whiteColor,
+                      text: "Register",
+                      textColor: AppColors.darkColor,
+                      width: 331,
+                      height: 56,
+                      onpressed: () {},
+                    ),
+                  ],
                 ),
               ],
             ),

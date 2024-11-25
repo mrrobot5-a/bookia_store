@@ -3,7 +3,18 @@
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-TextStyle getTitleTextStyle({
+TextStyle getFont30TextStyle({
+  double? fontSize,
+  Color? color,
+  FontWeight? fontWeight,
+}) {
+  return TextStyle(
+    color: color ?? AppColors.darkColor,
+    fontSize: fontSize ?? 30,
+  );
+}
+
+TextStyle getFont24TextStyle({
   double? fontSize,
   Color? color,
   FontWeight? fontWeight,
@@ -14,7 +25,7 @@ TextStyle getTitleTextStyle({
   );
 }
 
-TextStyle getBodyTextStyle({
+TextStyle getFont20TextStyle({
   double? fontSize,
   Color? color,
   FontWeight? fontWeight,
@@ -22,10 +33,22 @@ TextStyle getBodyTextStyle({
   return TextStyle(
     color: color ?? AppColors.darkColor,
     fontSize: fontSize ?? 20,
+    fontWeight: fontWeight ?? FontWeight.normal,
   );
 }
 
-TextStyle getSmallTextStyle({
+TextStyle getFont18TextStyle({
+  double? fontSize,
+  Color? color,
+  FontWeight? fontWeight,
+}) {
+  return TextStyle(
+    color: color ?? AppColors.darkColor,
+    fontSize: fontSize ?? 18,
+  );
+}
+
+TextStyle getFont16TextStyle({
   double? fontSize,
   Color? color,
   FontWeight? fontWeight,

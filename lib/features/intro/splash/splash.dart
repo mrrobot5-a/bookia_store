@@ -2,6 +2,7 @@
 
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
+import 'package:bookia_store/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Gap(10),
             Text(
               "Order Your Book Now!",
-              style: getBodyTextStyle(),
+              style: getFont20TextStyle(),
             ),
           ],
         ),
