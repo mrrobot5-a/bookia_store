@@ -1,6 +1,5 @@
-# Counter App
+# Bookia App
 
-A simple Flutter application that demonstrates state management using **flutter_bloc**. The app allows users to increment and decrement a counter value with real-time UI updates and notifications.
 
 ---
 
@@ -29,14 +28,6 @@ A simple Flutter application that demonstrates state management using **flutter_
 
 
 
-
-## Features
-
-- **Increment & Decrement**: Buttons to increase or decrease the counter.
-- **Snack Bar Notifications**: Shows the updated counter value dynamically.
-- **State Management**: Powered by `flutter_bloc` for scalable and clean state handling.
-
----
 
 ## Installation
 
