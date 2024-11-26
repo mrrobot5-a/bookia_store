@@ -4,8 +4,8 @@ import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  CustomButton({
+class Outlinebutton extends StatelessWidget {
+  Outlinebutton({
     super.key,
     required this.text,
     required this.width,
@@ -28,6 +28,7 @@ class CustomButton extends StatelessWidget {
         height: height,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+              side: BorderSide(color: AppColors.darkColor),
               backgroundColor: color ?? AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),

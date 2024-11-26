@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bookia_store/core/constants/app_assets.dart';
+import 'package:bookia_store/core/functions/navigation.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
+import 'package:bookia_store/core/widgets/outlineButton.dart';
+import 'package:bookia_store/features/intro/auth/data/presentation/page/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -30,6 +33,9 @@ class _SplashScreenState extends State<Welcome> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Spacer(
+                  flex: 2,
+                ),
                 SvgPicture.asset(
                   AppAssets.logoSvg,
                   width: 250,
@@ -39,6 +45,9 @@ class _SplashScreenState extends State<Welcome> {
                   "Order Your Book Now!",
                   style: getFont20TextStyle(),
                 ),
+                Spacer(
+                  flex: 4,
+                ),
                 Column(
                   children: [
                     CustomButton(
@@ -47,10 +56,12 @@ class _SplashScreenState extends State<Welcome> {
                       textColor: AppColors.whiteColor,
                       width: 331,
                       height: 56,
-                      onpressed: () {},
+                      onpressed: () {
+                        pushTo(context, LoginScreen());
+                      },
                     ),
                     Gap(20),
-                    CustomButton(
+                    Outlinebutton(
                       color: AppColors.whiteColor,
                       text: "Register",
                       textColor: AppColors.darkColor,
@@ -60,6 +71,7 @@ class _SplashScreenState extends State<Welcome> {
                     ),
                   ],
                 ),
+                Spacer(),
               ],
             ),
           ),

@@ -59,3 +59,15 @@ TextStyle getFont16TextStyle({
     fontWeight: fontWeight ?? FontWeight.normal,
   );
 }
+
+TextStyle getFont14TextStyle({
+  double? fontSize,
+  Color? color,
+  FontWeight? fontWeight,
+}) {
+  return TextStyle(
+    color: color ?? AppColors.darkGreyColor,
+    fontSize: fontSize ?? 14,
+    fontWeight: fontWeight ?? FontWeight.normal,
+  );
+}
