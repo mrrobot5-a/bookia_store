@@ -6,7 +6,8 @@ import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
 import 'package:bookia_store/core/widgets/outlineButton.dart';
-import 'package:bookia_store/features/intro/auth/data/presentation/page/login_screen.dart';
+import 'package:bookia_store/features/intro/auth/presentation/page/login_screen.dart';
+import 'package:bookia_store/features/intro/auth/presentation/page/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -67,7 +68,9 @@ class _SplashScreenState extends State<Welcome> {
                       textColor: AppColors.darkColor,
                       width: 331,
                       height: 56,
-                      onpressed: () {},
+                      onpressed: () {
+                        pushTo(context, RegisterScreen());
+                      },
                     ),
                   ],
                 ),
