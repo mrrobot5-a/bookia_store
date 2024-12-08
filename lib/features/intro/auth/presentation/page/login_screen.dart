@@ -66,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Gap(32),
                 TextFormField(
+                  controller: emailcontroller,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Email is required";
@@ -80,6 +81,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Gap(15),
                 TextFormField(
+                  controller: passwordController,
+
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Password is required";

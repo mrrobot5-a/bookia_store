@@ -69,6 +69,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 Gap(32),
                 TextFormField(
+                  controller: userNamecontroller,
                   decoration: InputDecoration(
                     hintText: "UserName",
                     hintStyle: getFont16TextStyle(),
@@ -83,6 +84,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 Gap(15),
                 TextFormField(
+                  controller: emailcontroller,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Please enter a valid email";
@@ -100,6 +102,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 Gap(15),
                 TextFormField(
+                  controller: passwordController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Please enter a password";
@@ -136,6 +139,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 Gap(13),
                 TextFormField(
+                  controller: confirmPasswordController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Please enter a password";
