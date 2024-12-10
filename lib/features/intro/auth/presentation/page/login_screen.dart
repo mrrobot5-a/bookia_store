@@ -82,7 +82,6 @@ class LoginScreen extends StatelessWidget {
                 Gap(15),
                 TextFormField(
                   controller: passwordController,
-
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Password is required";
