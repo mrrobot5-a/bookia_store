@@ -14,7 +14,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthRepoapi.register(event.params).then((value) {
       if (value != null) {
         emit(RegisterSuccessState());
-      }
+      } 
     });
   }
 }

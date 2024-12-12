@@ -3,8 +3,11 @@
 import 'package:bookia_store/core/constants/app_fonts.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
+import 'package:bookia_store/core/utils/theme.dart';
+import 'package:bookia_store/features/intro/auth/presentation/bloc/auth_bloc.dart';
 import 'package:bookia_store/features/intro/splash/splash.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,37 +18,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        inputDecorationTheme: InputDecorationTheme(
-          fillColor: AppColors.greyColor,
-          filled: true,
-          hintStyle: getFont16TextStyle(),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.borderColor),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.borderColor),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.redColor),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.redColor),
-          ),
-        ),
-        scaffoldBackgroundColor: AppColors.whiteColor,
-        appBarTheme: AppBarTheme(
-          backgroundColor: AppColors.whiteColor,
-        ),
-        fontFamily: AppFonts.dmSerif,
+    return BlocProvider(
+      create: (context) => AuthBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        home: SplashScreen(),
       ),
-      home: SplashScreen(),
     );
   }
 }
