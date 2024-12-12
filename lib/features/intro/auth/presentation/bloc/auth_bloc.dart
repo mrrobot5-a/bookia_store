@@ -6,15 +6,38 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitialState()) {
     on<RegisterEvent>(register);
+    on<LoginEvent>(login);
   }
 
-  register(RegisterEvent event, Emitter<AuthState> emit) {
+  Future<void> register(RegisterEvent event, Emitter<AuthState> emit) async {
     emit(RegisterLodaingState());
 
-    AuthRepoapi.register(event.params).then((value) {
-      if (value != null) {
-        emit(RegisterSuccessState());
-      } 
-    });
+    try {
+      await AuthRepoapi.register(event.params).then((value) {
+        if (value != null) {
+          emit(RegisterSuccessState());
+        } else {
+          emit(AuthErrorState(message: "Unexpected error"));
+        }
+      });
+    } on Exception catch (e) {
+      emit(AuthErrorState(message: "Unexpected error"));
+    }
+  }
+
+  Future<void> login(LoginEvent event, Emitter<AuthState> emit) async {
+    emit(LoginLoadingState());
+
+    try {
+      await AuthRepoapi.login(event.params).then((value) {
+        if (value != null) {
+          emit(LoginSuccessState());
+        } else {
+          emit(AuthErrorState(message: "Unexpected error"));
+        }
+      });
+    } on Exception catch (e) {
+      emit(AuthErrorState(message: "Unexpected error"));
+    }
   }
 }

@@ -9,12 +9,17 @@ import 'package:lottie/lottie.dart';
 //Show error message
 showErrorDialog(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    duration: Duration(seconds: 3),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
     backgroundColor: AppColors.redColor,
     content: Text(
       message,
       style: getFont16TextStyle(
         color: AppColors.whiteColor,
       ),
+      textAlign: TextAlign.center,
     ),
   ));
 }
@@ -23,11 +28,18 @@ showErrorDialog(BuildContext context, String message) {
 
 showLoadingDialog(BuildContext context) {
   showDialog(
+      // barrierDismissible: false,
       context: context,
       builder: (context) {
         return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(name)
+            Lottie.asset(
+              "assets/icons/book.json",
+              width: 300,
+              height: 300,
+              alignment: Alignment.center,
+            ),
           ],
         );
       });

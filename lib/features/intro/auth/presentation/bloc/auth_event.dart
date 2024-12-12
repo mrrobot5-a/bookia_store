@@ -8,4 +8,8 @@ class RegisterEvent extends AuthEvent {
   RegisterEvent(this.params);
 }
 
-class LoginEvent extends AuthEvent {}
+class LoginEvent extends AuthEvent {
+  final UserModelParams params;
+
+  LoginEvent(this.params);
+}
