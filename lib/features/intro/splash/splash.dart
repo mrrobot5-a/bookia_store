@@ -2,8 +2,10 @@
 
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/functions/navigation.dart';
+import 'package:bookia_store/core/services/local/app_local_storage.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
+import 'package:bookia_store/features/intro/home/presentation/pages/home_screen.dart';
 import 'package:bookia_store/features/intro/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,8 +21,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
+    String? token = AppLocalStorage.getCacheData(AppLocalStorage.token);
     Future.delayed(Duration(seconds: 2), () {
-      pushWithReplacment(context, Welcome());
+      if (token != null) {
+        pushWithReplacment(context, HomePage());
+      } else {
+        pushWithReplacment(context, Welcome());
+      }
     });
   }
 

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bookia_store/core/constants/app_fonts.dart';
+import 'package:bookia_store/core/services/local/app_local_storage.dart';
 import 'package:bookia_store/core/services/remote/dio_provider.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DioProvider.init();
+  await AppLocalStorage.init();
   runApp(const MainApp());
 }
 

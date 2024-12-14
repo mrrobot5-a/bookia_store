@@ -1,3 +1,4 @@
+import 'package:bookia_store/core/services/local/app_local_storage.dart';
 import 'package:bookia_store/features/intro/auth/data/repoApi/auth_repoApi.dart';
 import 'package:bookia_store/features/intro/auth/presentation/bloc/auth_event.dart';
 import 'package:bookia_store/features/intro/auth/presentation/bloc/auth_state.dart';
@@ -15,6 +16,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       await AuthRepoapi.register(event.params).then((value) {
         if (value != null) {
+          AppLocalStorage.cacheData(AppLocalStorage.token, value.data?.token);
+
           emit(RegisterSuccessState());
         } else {
           emit(AuthErrorState(message: "Unexpected error"));
@@ -31,6 +34,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       await AuthRepoapi.login(event.params).then((value) {
         if (value != null) {
+          AppLocalStorage.cacheData(AppLocalStorage.token, value.data?.token);
           emit(LoginSuccessState());
         } else {
           emit(AuthErrorState(message: "Unexpected error"));
