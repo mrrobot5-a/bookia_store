@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:bookia_store/core/services/remote/dio_provider.dart';
 import 'package:bookia_store/core/services/remote/endpoints.dart';
 import 'package:bookia_store/features/intro/auth/data/model/request/user_model_params.dart';
 import 'package:bookia_store/features/intro/auth/data/model/response/user_model_response/user_model_response.dart';
@@ -12,8 +13,8 @@ class AuthRepoapi {
       log('Sending request to ${EndpointsApp.baseUrl}${EndpointsApp.registerEndPoint}');
       log('Request payload: ${params.toJson()}');
 
-      var response = await Dio().post(
-        '${EndpointsApp.baseUrl}${EndpointsApp.registerEndPoint}',
+      var response = await DioProvider.post(
+        endpoints: EndpointsApp.registerEndPoint,
         data: params.toJson(),
       );
 
@@ -43,8 +44,8 @@ class AuthRepoapi {
 
   static Future<UserModelResponse?> login(UserModelParams params) async {
     try {
-      var response = await Dio().post(
-        EndpointsApp.baseUrl + EndpointsApp.loginEndpoint,
+      var response = await DioProvider.post(
+        endpoints: EndpointsApp.loginEndpoint,
         data: params.toJson(),
       );
 

@@ -3,7 +3,8 @@ class AppAssets {
   static const String blackHeartPng = "assets/images/blackHeart.png";
   static const String logoPng = "assets/images/logo.png";
   static const String logoSvg = "assets/icons/logo.svg";
-
+  static const String homeSvg = "assets/icons/Home.svg";
+  static const String categorySvg = "assets/icons/Category.svg";
   // Other assets can be added here
   static const String appleSvg = "assets/icons/apple.svg";
   static const String bookMarkPng = "assets/icons/Bookmark.png";

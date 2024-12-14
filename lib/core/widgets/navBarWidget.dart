@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -40,16 +41,17 @@ class _NavBarWidgetState extends State<NavBarWidget> {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icons/Home.svg",
-              color: currentPage == 0
-                  ? AppColors.primaryColor
-                  : AppColors.darkColor,
+              AppAssets.homeSvg,
+              colorFilter: ColorFilter.mode(
+                currentPage == 0 ? AppColors.primaryColor : AppColors.darkColor,
+                BlendMode.srcIn,
+              ),
             ),
             label: "profile",
           ),
           BottomNavigationBarItem(
               icon: Image.asset(
-                "assets/icons/Bookmark.png",
+                AppAssets.bookMarkPng,
                 color: currentPage == 1
                     ? AppColors.primaryColor
                     : AppColors.darkColor,
@@ -57,18 +59,26 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               label: "Book"),
           BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                "assets/icons/Category.svg",
-                color: currentPage == 2
-                    ? AppColors.primaryColor
-                    : AppColors.darkColor,
+                AppAssets.categorySvg,
+                colorFilter: ColorFilter.mode(
+                  currentPage == 2
+                      ? AppColors.primaryColor
+                      : AppColors.darkColor,
+                  BlendMode.srcIn,
+                ),
               ),
               label: "cart"),
           BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                "assets/icons/Profile.svg",
-                color: currentPage == 3
-                    ? AppColors.primaryColor
-                    : AppColors.darkColor,
+                AppAssets.profileSvg,
+
+                colorFilter: ColorFilter.mode(
+                  currentPage == 3
+                      ? AppColors.primaryColor
+                      : AppColors.darkColor,
+                  BlendMode.srcIn,
+                ),
+                // color:
               ),
               label: "profile"),
         ],
