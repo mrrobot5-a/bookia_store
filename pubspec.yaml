@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  carousel_slider: ^5.0.0
   dio: ^5.7.0
   flutter:
     sdk: flutter
@@ -15,6 +16,7 @@ dependencies:
   gap: ^3.0.1
   lottie: ^1.4.3
   shared_preferences: ^2.3.3
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_lints: ^4.0.0
