@@ -6,6 +6,7 @@ import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/features/intro/home/presentation/widgets/banner.dart';
+import 'package:bookia_store/features/intro/home/presentation/widgets/books.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -45,31 +46,8 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             BannerWidget(),
-            Gap(30),
-            Text(
-              "Popular Books",
-              style: getFont24TextStyle(),
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 6,
-              itemBuilder: (context, index) {
-                return Container(
-                  color: AppColors.borderColor,
-                  child: Column(
-                    children: [
-                      Image.asset(AppAssets.blackHeartPng),
-                    ],
-                  ),
-                );
-              },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-            ),
+            Gap(10),
+            Books(),
           ],
         ),
       ),
