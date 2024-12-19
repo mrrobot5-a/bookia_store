@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookia_store/features/intro/home/data/repo/home_repo.dart';
-
 part 'home_event.dart';
 part 'home_state.dart';
 
