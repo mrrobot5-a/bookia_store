@@ -2,6 +2,7 @@
 
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
+import 'package:bookia_store/features/intro/home/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,10 +16,22 @@ class NavBarWidget extends StatefulWidget {
 class _NavBarWidgetState extends State<NavBarWidget> {
   int currentPage = 0;
   List<Widget> pages = [
-    Center(child: Icon(Icons.home, size: 100, color: Colors.blue)),
-    Center(child: Icon(Icons.bookmark, size: 100, color: Colors.orange)),
-    Center(child: Icon(Icons.shopping_cart, size: 100, color: Colors.green)),
-    Center(child: Icon(Icons.person, size: 100, color: Colors.purple)),
+    HomePage(),
+    Center(
+      child: Text(
+        "BookMark",
+      ),
+    ),
+    Center(
+      child: Text(
+        "Cart",
+      ),
+    ),
+    Center(
+      child: Text(
+        "Profile",
+      ),
+    ),
   ];
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
+import 'package:bookia_store/core/widgets/navBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

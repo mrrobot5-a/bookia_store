@@ -5,6 +5,7 @@ import 'package:bookia_store/core/functions/navigation.dart';
 import 'package:bookia_store/core/services/local/app_local_storage.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
+import 'package:bookia_store/core/widgets/navBarWidget.dart';
 import 'package:bookia_store/features/intro/home/presentation/pages/home_screen.dart';
 import 'package:bookia_store/features/intro/welcome/welcome.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     String? token = AppLocalStorage.getCacheData(AppLocalStorage.token);
     Future.delayed(Duration(seconds: 2), () {
       if (token != null) {
-        pushWithReplacment(context, HomePage());
+        pushWithReplacment(context, NavBarWidget());
       } else {
         pushWithReplacment(context, Welcome());
       }

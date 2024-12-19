@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
+import 'package:bookia_store/core/widgets/navBarWidget.dart';
 import 'package:bookia_store/features/intro/home/presentation/widgets/banner.dart';
 import 'package:bookia_store/features/intro/home/presentation/widgets/books.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> {
             child: SvgPicture.asset(AppAssets.searchSvg),
             onTap: () {},
           ),
+          Gap(10),
         ],
       ),
       body: SingleChildScrollView(
