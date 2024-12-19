@@ -33,7 +33,7 @@ class Books extends StatelessWidget {
             ),
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 6,
+            itemCount: 9,
             itemBuilder: (context, index) {
               return Container(
                 padding: EdgeInsets.all(10),
@@ -47,7 +47,7 @@ class Books extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          AppAssets.blackHeartPng,
+                          AppAssets.backgroundPng,
                           width: double.infinity,
                           fit: BoxFit.cover,
                         ),
