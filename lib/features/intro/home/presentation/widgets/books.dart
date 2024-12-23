@@ -30,6 +30,9 @@ class _BooksState extends State<Books> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
+      buildWhen: (previous, current) =>
+          current is NewArrivalsSuccessState ||
+          current is NewArrivalsloadingState,
       builder: (context, state) {
         if (state is NewArrivalsSuccessState) {
           var booksList =
