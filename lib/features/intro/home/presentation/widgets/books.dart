@@ -32,6 +32,8 @@ class _BooksState extends State<Books> {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         if (state is NewArrivalsSuccessState) {
+          var booksList =
+              context.read<HomeBloc>().newArrivalsBooks?.data?.products ?? [];
           return Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -51,7 +53,7 @@ class _BooksState extends State<Books> {
                   ),
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 9,
+                  itemCount: booksList.length,
                   itemBuilder: (context, index) {
                     return Container(
                       padding: EdgeInsets.all(10),
@@ -64,8 +66,8 @@ class _BooksState extends State<Books> {
                           Expanded(
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                AppAssets.backgroundPng,
+                              child: Image.network(
+                                "${booksList[index].image}",
                                 width: double.infinity,
                                 fit: BoxFit.cover,
                               ),
@@ -76,14 +78,17 @@ class _BooksState extends State<Books> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "The Republic",
-                                style: getFont18TextStyle(),
+                                booksList[index].name ?? " ",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                // bookList.,
+                                style: getFont16TextStyle(),
                               ),
                               Gap(30),
                               Row(
                                 children: [
                                   Text(
-                                    "285 Eg",
+                                    "${booksList[index].priceAfterDiscount} Eg",
                                     style: getFont16TextStyle(),
                                   ),
                                   Spacer(),
