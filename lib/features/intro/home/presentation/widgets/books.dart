@@ -105,9 +105,10 @@ class _BooksState extends State<Books> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Gap(20),
                               Text(
                                 booksList[index].name ?? " ",
-                                maxLines: 2,
+                                maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 // bookList.,
                                 style: getFont16TextStyle(),
