@@ -1,11 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
 import 'package:bookia_store/core/widgets/custom_button.dart';
-import 'package:bookia_store/core/widgets/navBarWidget.dart';
-import 'package:bookia_store/features/intro/home/data/models/get_new_arrivals_response/get_new_arrivals_response.dart';
 import 'package:bookia_store/features/intro/home/presentation/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -66,17 +63,39 @@ class _BooksState extends State<Books> {
                       ),
                       child: Column(
                         children: [
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.network(
-                                "${booksList[index].image}",
-                                width: double.infinity,
-                                fit: BoxFit.cover,
+                          Stack(
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.network(
+                                    "${booksList[index].image}",
+                                    width: double.infinity,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Padding(
+                                padding: const EdgeInsets.all(3.0),
+                                child: Container(
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    color: AppColors.primaryColor,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "${booksList[index].discount}%",
+                                      style: getFont14TextStyle(
+                                        color: AppColors.darkColor,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Gap(7),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -87,7 +106,7 @@ class _BooksState extends State<Books> {
                                 // bookList.,
                                 style: getFont16TextStyle(),
                               ),
-                              Gap(30),
+                              Gap(3),
                               Row(
                                 children: [
                                   Text(
