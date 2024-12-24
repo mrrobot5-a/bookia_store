@@ -75,20 +75,25 @@ class _BooksState extends State<Books> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(3.0),
-                                child: Container(
-                                  width: 30,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(4),
-                                    color: AppColors.primaryColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      "${booksList[index].discount}%",
-                                      style: getFont14TextStyle(
-                                        color: AppColors.darkColor,
-                                        fontSize: 12,
+                              Positioned(
+                                top: 0,
+                                right: 0,
+                                child: Transform.rotate(
+                                  angle: 0,
+                                  alignment: Alignment.centerRight,
+                                  child: Container(
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      color: AppColors.discountColor,
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "${booksList[index].discount}%",
+                                        style: getFont14TextStyle(
+                                          color: AppColors.whiteColor,
+                                          fontSize: 12,
+                                        ),
                                       ),
                                     ),
                                   ),
