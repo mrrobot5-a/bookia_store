@@ -93,6 +93,7 @@ class _BooksState extends State<Books> {
                                         style: getFont14TextStyle(
                                           color: AppColors.whiteColor,
                                           fontSize: 12,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                     ),
