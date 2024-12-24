@@ -1,6 +1,5 @@
 // ignore_for_file: annotate_overrides, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/features/intro/home/presentation/bloc/home_bloc.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -55,7 +54,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                   initialPage: 0,
                   enableInfiniteScroll: true,
                   reverse: false,
-                  autoPlay: true,
+                  autoPlay: false,
                   autoPlayInterval: Duration(seconds: 3),
                   autoPlayAnimationDuration: Duration(milliseconds: 800),
                   autoPlayCurve: Curves.fastOutSlowIn,
