@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings
 
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/core/utils/text_style.dart';
+import 'package:bookia_store/core/widgets/custom_button.dart';
 import 'package:bookia_store/features/intro/home/data/models/get_new_arrivals_response/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 
 class BookDetails extends StatefulWidget {
   BookDetails({super.key, required this.product});
@@ -59,30 +61,65 @@ class _BookDetailsState extends State<BookDetails> {
           )
         ],
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Image.network(
-              widget.product.image ?? " ",
-              height: 271,
-            ),
-            Text(
-              "Black Heart",
-              style: getFont30TextStyle(),
-            ),
-            Text(
-              "Broché",
-              style: getFont16TextStyle(
-                color: AppColors.primaryColor,
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 7.0, left: 22, right: 22, bottom: 10),
+          child: Row(
+            children: [
+              Text(
+                widget.product.priceAfterDiscount.toString() + " \$" ?? " ",
+                style: getFont24TextStyle(),
               ),
-            ),
-            Text(
-              widget.product.description ?? "There is No description",
-              style: getFont14TextStyle(
+              Gap(45),
+              Expanded(
+                  child: CustomButton(
+                text: "Add To Cart",
+                textColor: AppColors.whiteColor,
+                width: 200,
+                height: 56,
+                onpressed: () {},
                 color: AppColors.darkColor,
-              ),
+              )),
+            ],
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(22.0),
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    widget.product.image ?? " ",
+                    height: 271,
+                  ),
+                ),
+                Gap(20),
+                Text(
+                  textAlign: TextAlign.center,
+                  widget.product.name ?? " ",
+                  style: getFont30TextStyle(),
+                ),
+                Text(
+                  widget.product.category ?? " ",
+                  style: getFont16TextStyle(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+                Gap(16),
+                Text(
+                  widget.product.description ?? "There is No description",
+                  style: getFont14TextStyle(
+                    color: AppColors.darkColor,
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
