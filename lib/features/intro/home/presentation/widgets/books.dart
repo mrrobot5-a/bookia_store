@@ -76,13 +76,16 @@ class _BooksState extends State<Books> {
                             Stack(
                               children: [
                                 Expanded(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.network(
-                                      height: 200,
-                                      "${booksList[index].image}",
-                                      width: double.infinity,
-                                      fit: BoxFit.cover,
+                                  child: Hero(
+                                    tag: booksList[index].id.toString(),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(
+                                        height: 200,
+                                        "${booksList[index].image}",
+                                        width: double.infinity,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),

@@ -91,11 +91,14 @@ class _BookDetailsState extends State<BookDetails> {
             padding: const EdgeInsets.all(22.0),
             child: Column(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    widget.product.image ?? " ",
-                    height: 271,
+                Hero(
+                  tag: widget.product.id.toString(),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      widget.product.image ?? " ",
+                      height: 271,
+                    ),
                   ),
                 ),
                 Gap(20),
