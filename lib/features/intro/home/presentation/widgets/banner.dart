@@ -1,5 +1,6 @@
 // ignore_for_file: annotate_overrides, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+// ! watching from 1:40:00
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/features/intro/home/presentation/bloc/home_bloc.dart';
 import 'package:carousel_slider/carousel_slider.dart';

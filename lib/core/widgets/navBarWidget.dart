@@ -3,6 +3,7 @@
 import 'package:bookia_store/core/constants/app_assets.dart';
 import 'package:bookia_store/core/utils/colors.dart';
 import 'package:bookia_store/features/intro/home/presentation/pages/home_screen.dart';
+import 'package:bookia_store/features/intro/wishList/presentation/pages/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,11 +18,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   int currentPage = 0;
   List<Widget> pages = [
     HomePage(),
-    Center(
-      child: Text(
-        "BookMark",
-      ),
-    ),
+    WishListScreen(),
     Center(
       child: Text(
         "Cart",
