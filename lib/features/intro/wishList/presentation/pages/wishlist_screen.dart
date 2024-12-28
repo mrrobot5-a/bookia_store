@@ -59,17 +59,14 @@ class _WishListScreenState extends State<WishListScreen> {
                           children: [
                             Expanded(
                               child: Text(
-                                "The Republic",
+                                "The Republic  ",
                                 style: getFont18TextStyle(),
                               ),
                             ),
-                            IconButton(
-                              onPressed: () {},
-                              iconSize: 24,
-                              icon: SvgPicture.asset(AppAssets.removeSvg),
-                            ),
+                            SvgPicture.asset(AppAssets.removeSvg),
                           ],
                         ),
+                        Gap(10),
                         Text(
                           "270 \$",
                           style: getFont16TextStyle(),
